@@ -6,6 +6,7 @@ my_file = open("data01_binary.txt", "r")
 content = my_file.read()
 data = list(content)
 
+
 filtered = list(filter(lambda char: char != '\t', data))
 filtered1 = list(filter(lambda char: char != '\n', filtered))
 
