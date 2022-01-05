@@ -14,10 +14,11 @@ data = list(content)
 I = [int(i) for i in data]
 R = np.array(I)
 
-sio.savemat('myfile.mat',{'array': R})
+#sio.savemat('myfile.mat',{'array': R})
 
 print(R)
 print(type(R))
+print(len(R))
 
 
 """
