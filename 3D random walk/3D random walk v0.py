@@ -8,20 +8,24 @@ content = my_file.read()
 data = list(content)
  
 I = [int(i) for i in data]
-N = int(len(I)/5)
+#N = int(len(I)/5)
+N = 3000
 L = []
 r = 0
-t = 0                          
+t = 0    
+Count = [0, 0, 0, 0, 0, 0]                      
 for p in range(0, N):
     
     for i in range(t, t+5):
         r = r + I[i]
     L.append(r)
+    Count[r] = Count[r]+1
     r = 0
     t = t+5
 R = np.array(L)
 
-print(N)
+print('[0, 1, 2, 3, 4, 5] =', Count)
+print('N =', N)
 print(R)
 
 x = np.zeros(N) 

@@ -9,13 +9,13 @@ my_file = open("/Users/davidhuang/Python/HardwareSecurity/3D random walk/data01_
 content = my_file.read()
 data = list(content)
 print('Finished data input')
-
 filtered = list(filter(lambda char: char != '\t', data))
 print('Finished first filter')
 filtered1 = list(filter(lambda char: char != '\n', filtered))
 print('Finished second filter')
 
 N = int(len(filtered1)/2)
+#N = 3000
 t = 0
 I = []
 Count = [0, 0, 0, 0, 0, 0]
@@ -31,9 +31,10 @@ while times < N:
         t = 0
         progress.update(1)
         times += 1
-        #sleep(0.000001)
- 
 R = np.array(I)
+print('[0, 1, 2, 3, 4, 5] =', Count)
+print('N =', N)
+print(R)
 
 x = np.zeros(N) 
 y = np.zeros(N)

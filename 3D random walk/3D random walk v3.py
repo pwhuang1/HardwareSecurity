@@ -25,33 +25,13 @@ progress = tqdm(total=N)
 while times < N:
     for q in range(0, N):
         t = int(filtered1[2*q], 16)*16 + int(filtered1[2*q+1], 16)
-        if t >= 0 and t < 47:
-            Count[0] = Count[0]+1
-            I.append(0)
-        if t >= 47 and t < 89:
-            Count[1] = Count[1]+1
-            I.append(1)
-        if t >= 89 and t < 131:
-            Count[2] = Count[2]+1
-            I.append(2)
-        if t >= 131 and t < 173:
-            Count[3] = Count[3]+1
-            I.append(3)
-        if t >= 173 and t < 215:
-            Count[4] = Count[4]+1
-            I.append(4)
-        if t >= 215 and t < 256:
-            Count[5] = Count[5]+1
-            I.append(5)
-
-        #t = int(t*6/256)
+        t = int(t%6)
+        I.append(t)
+        Count[t] = Count[t]+1
         t = 0
         progress.update(1)
         times += 1
-        #sleep(0.000001)
- 
 R = np.array(I)
-
 print('[0, 1, 2, 3, 4, 5] =', Count)
 print('N =', N)
 print(R)
@@ -66,7 +46,7 @@ x = np.cumsum(x) #The cumsum() function is used to get cumulative sum over a Dat
 y = np.cumsum(y)
 z = np.cumsum(z)
 plt.figure()
-ax = plt.subplot(2,2,2, projection='3d')
+ax = plt.subplot(1,1,1, projection='3d')
 ax.plot(x, y, z,alpha=0.9) #alpha sets the darkness of the path.
 ax.scatter(x[-1],y[-1],z[-1])
 plt.show()
