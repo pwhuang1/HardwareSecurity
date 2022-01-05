@@ -5,7 +5,7 @@ from time import sleep
 from tqdm import tqdm, trange
 
 
-my_file = open("data01_binary.txt", "r")
+my_file = open("/Users/davidhuang/Python/HardwareSecurity/3D random walk/data01_binary.txt", "r")
 content = my_file.read()
 data = list(content)
 print('Finished data input')

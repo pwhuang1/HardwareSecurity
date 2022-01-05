@@ -5,7 +5,7 @@ from time import sleep
 from tqdm import tqdm, trange
 
 
-my_file = open("data01_binary.txt", "r")
+my_file = open("/Users/davidhuang/Python/HardwareSecurity/3D random walk/data01_binary.txt", "r")
 content = my_file.read()
 data = list(content)
 print('Finished data input')
@@ -65,7 +65,7 @@ x = np.cumsum(x) #The cumsum() function is used to get cumulative sum over a Dat
 y = np.cumsum(y)
 z = np.cumsum(z)
 plt.figure()
-ax = plt.subplot(1,1,1, projection='3d')
+ax = plt.subplot(2,2,2, projection='3d')
 ax.plot(x, y, z,alpha=0.9) #alpha sets the darkness of the path.
 ax.scatter(x[-1],y[-1],z[-1])
 plt.show()

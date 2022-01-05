@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D #for plotting the 3-D plot.
 
 
-my_file = open("data13.txt", "r")
+my_file = open("/Users/davidhuang/Python/HardwareSecurity/3D random walk/data13.txt", "r")
 content = my_file.read()
 data = list(content)
  
